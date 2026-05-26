@@ -1,55 +1,126 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Dhinesh Photo Frames</title>
 
 <style>
 
-body{
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
 font-family:Arial;
-background:#111;
+}
+
+body{
+background:#0f0f0f;
 color:white;
 }
 
-header{
-background:black;
-padding:20px;
-text-align:center;
-font-size:35px;
-color:orange;
-font-weight:bold;
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 50px;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+z-index:1000;
 }
+
+nav h1{
+color:#ff9800;
+font-size:35px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+font-size:18px;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#ff9800;
+}
+
+/* HERO */
 
 .hero{
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
-padding:60px;
-background:linear-gradient(to right,#000000,#434343);
+background:
+linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32');
+background-size:cover;
+background-position:center;
 }
 
-.hero h1{
-font-size:55px;
+.hero h2{
+font-size:70px;
+margin-bottom:20px;
 }
 
 .hero p{
 font-size:25px;
+margin-bottom:30px;
+}
+
+.hero button{
+padding:15px 35px;
+font-size:20px;
+border:none;
+border-radius:50px;
+background:#ff9800;
+cursor:pointer;
+transition:0.3s;
+}
+
+.hero button:hover{
+transform:scale(1.1);
+}
+
+/* PRODUCTS */
+
+.title{
+text-align:center;
+font-size:45px;
+margin-top:60px;
+color:#ff9800;
 }
 
 .container{
 display:flex;
 justify-content:center;
-gap:30px;
+gap:35px;
 flex-wrap:wrap;
-padding:40px;
+padding:50px;
 }
 
 .card{
-background:#222;
-width:280px;
-border-radius:15px;
+width:300px;
+background:rgba(255,255,255,0.08);
+border-radius:20px;
 overflow:hidden;
-box-shadow:0 0 15px rgba(255,255,255,0.2);
+backdrop-filter:blur(10px);
+box-shadow:0 0 20px rgba(255,255,255,0.1);
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
 }
 
 .card img{
@@ -58,51 +129,76 @@ height:250px;
 object-fit:cover;
 }
 
-.card h2{
+.card h3{
 text-align:center;
+margin-top:20px;
+font-size:28px;
 }
 
 .price{
 text-align:center;
-font-size:22px;
-color:yellow;
+font-size:24px;
+color:#ff9800;
+margin-top:10px;
 }
 
-button{
+.card button{
 display:block;
 margin:20px auto;
-padding:12px 25px;
+padding:12px 30px;
 border:none;
-border-radius:10px;
-background:orange;
+border-radius:30px;
+background:#ff9800;
 font-size:18px;
 cursor:pointer;
 }
 
+/* ABOUT */
+
+.about{
+padding:80px 40px;
+text-align:center;
+line-height:40px;
+font-size:22px;
+background:#181818;
+}
+
+.about h2{
+font-size:45px;
+margin-bottom:20px;
+color:#ff9800;
+}
+
+/* CONTACT */
+
 .contact{
-background:#1a1a1a;
-padding:40px;
+padding:70px 20px;
 text-align:center;
 }
 
 .contact h2{
-font-size:40px;
-color:orange;
+font-size:45px;
+color:#ff9800;
+margin-bottom:20px;
 }
 
 .contact p{
-font-size:22px;
+font-size:24px;
+margin:15px;
 }
 
 .contact a{
-color:yellow;
+color:#ff9800;
 text-decoration:none;
 }
+
+/* FOOTER */
 
 footer{
 background:black;
 padding:20px;
 text-align:center;
+font-size:18px;
 }
 
 </style>
@@ -110,17 +206,34 @@ text-align:center;
 
 <body>
 
-<header>
-Dhinesh Photo Frames
-</header>
+<nav>
+
+<h1>Dhinesh Frames</h1>
+
+<div>
+<a href="#">Home</a>
+<a href="#">Products</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+</div>
+
+</nav>
 
 <section class="hero">
 
-<h1>Premium Photo Frames 📸</h1>
+<h2>Premium Photo Frames</h2>
 
-<p>Best Quality Frames For Your Memories</p>
+<p>Make Your Memories Beautiful 📸</p>
+
+<button onclick="window.location.href='https://wa.me/919677393720'">
+Order On WhatsApp
+</button>
 
 </section>
+
+<h2 class="title">
+Our Products
+</h2>
 
 <div class="container">
 
@@ -128,11 +241,11 @@ Dhinesh Photo Frames
 
 <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32">
 
-<h2>Wedding Frame</h2>
+<h3>Wedding Frame</h3>
 
 <p class="price">₹499</p>
 
-<button>Order Now</button>
+<button>Buy Now</button>
 
 </div>
 
@@ -140,11 +253,11 @@ Dhinesh Photo Frames
 
 <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
 
-<h2>Couple Frame</h2>
+<h3>Couple Frame</h3>
 
 <p class="price">₹699</p>
 
-<button>Order Now</button>
+<button>Buy Now</button>
 
 </div>
 
@@ -152,21 +265,33 @@ Dhinesh Photo Frames
 
 <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4">
 
-<h2>Family Frame</h2>
+<h3>Family Frame</h3>
 
 <p class="price">₹899</p>
 
-<button>Order Now</button>
+<button>Buy Now</button>
 
 </div>
 
 </div>
+
+<section class="about">
+
+<h2>About Us</h2>
+
+<p>
+We create stylish and premium quality photo frames for weddings,
+couples, birthdays and family memories.
+Best quality with modern finishing.
+</p>
+
+</section>
 
 <section class="contact">
 
 <h2>Contact Us</h2>
 
-<p>📞 Phone: 9677393720</p>
+<p>📞 9677393720</p>
 
 <p>
 💬 WhatsApp:
@@ -175,14 +300,14 @@ Chat Now
 </a>
 </p>
 
-<p>
-📍 Chennai, Tamil Nadu
-</p>
+<p>📍 Chennai, Tamil Nadu</p>
 
 </section>
 
 <footer>
-© 2026 Dhinesh Photo Frames
+
+© 2026 Dhinesh Photo Frames | All Rights Reserved
+
 </footer>
 
 </body>
